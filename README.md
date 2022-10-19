@@ -2,12 +2,12 @@
 
 Screenshots of actions:
 
-[listCcontacts](https://ibb.co/4R1M0z7)
+1. [listCcontacts](https://ibb.co/4R1M0z7)
 
-[getContactById](https://ibb.co/tL1znZ7)
+2. [getContactById](https://ibb.co/tL1znZ7)
 
-[addContact](https://ibb.co/3WrtzPx)
+3. [addContact](https://ibb.co/3WrtzPx)
 
-[removeContactById](https://ibb.co/Nyv0x3R)
+4. [removeContactById](https://ibb.co/Nyv0x3R)
 
 After "add" and "delete" a "list" is entered to view the results of the action.
