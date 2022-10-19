@@ -7,21 +7,17 @@ const contactsPath = path.resolve("./db/contacts.json");
 function listContacts() {
   fs.readFile(contactsPath, "utf-8")
     .then((data) => {
-      return JSON.parse(data);
-    })
-    .then((data) => {
-      return data.map((elem) => {
-          return {
-            Id: elem.id,
-            Name: elem.name,
-            Email: elem.email,
-            Phone: elem.phone,
-          };
-        }
-      );
+      return JSON.parse(data).map(elem => {
+        return {
+          Id: elem.id,
+          Name: elem.name,
+          Email: elem.email,
+          Phone: elem.phone,
+        };
+      });
     })
     .then((res) => console.table(res))
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 }
 
 function getContactById(contactId) {
@@ -30,7 +26,7 @@ function getContactById(contactId) {
       return JSON.parse(data).filter((el) => el.id === contactId);
     })
     .then((data) => console.table(data))
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 }
 
 function removeContact(contactId) {
@@ -48,10 +44,9 @@ function removeContact(contactId) {
 
 function addContact(name, email, phone) {
   fs.readFile(contactsPath, "utf-8")
-    .then(data => {return JSON.parse(data)})
     .then((data) => {
       return [
-        ...data,
+        ...JSON.parse(data),
         {
           id: uuidv4(),
           name: name,
