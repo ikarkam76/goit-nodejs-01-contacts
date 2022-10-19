@@ -10,15 +10,14 @@ function listContacts() {
       return JSON.parse(data);
     })
     .then((data) => {
-      return Promise.all(
-        data.map((elem) => {
+      return data.map((elem) => {
           return {
             Id: elem.id,
             Name: elem.name,
             Email: elem.email,
             Phone: elem.phone,
           };
-        })
+        }
       );
     })
     .then((res) => console.table(res))
